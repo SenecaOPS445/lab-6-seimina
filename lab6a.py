@@ -23,8 +23,8 @@ class Student:
         if len(self.courses) == 0:
             return 'GPA of student ' + self.name + ' is 0.0'  # Handle the case when no courses are added
         gpa = 0.0
-        for course in self.courses.values():
-            gpa += course
+        for course in self.courses.keys():
+            gpa = gpa + self.courses[course]
         return 'GPA of student ' + self.name + ' is ' + str(gpa / len(self.courses))
 
     # Return a list of courses that the student passed (not a 0.0 grade)
